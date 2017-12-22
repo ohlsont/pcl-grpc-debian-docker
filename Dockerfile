@@ -18,6 +18,7 @@ RUN git clone -b ${GRPC_RELEASE_TAG} https://github.com/grpc/grpc /var/local/git
     cd /var/local/git/grpc && \
     make -j$(nproc) && make install && make clean && ldconfig
 
+# PCL
 RUN apt-get update -qq && apt-get install -y --no-install-recommends \
       make cmake build-essential git \
       libeigen3-dev \
@@ -41,3 +42,5 @@ RUN cd pcl-trunk && cd build && \
     make clean
 
 RUN ldconfig
+
+#Other code
